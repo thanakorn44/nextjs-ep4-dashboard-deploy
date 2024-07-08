@@ -47,7 +47,7 @@ function EditPage({ params }) {
 
     useEffect(() => {
         getPostById(id);
-    }, [])
+    }, [id])
 
     const handlerSubmit = async (e) => {
         e.preventDefault();

@@ -58,7 +58,7 @@ function AdminEditPostPage({ params }) {
 
     useEffect(() => {
         getPostById(id)
-    }, []);
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
