@@ -20,7 +20,7 @@ function LoginPage() {
   const route = useRouter();
 
   const {data: session} = useSession();
-  if (session) route.replace("welcome")
+  if (session) route.replace("/welcome")
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ function LoginPage() {
         return;
       }
 
-      route.replace("welcome");
+      route.replace("/welcome");
 
     } catch (error) {
       console.log(error)
