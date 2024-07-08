@@ -61,6 +61,8 @@ function EditPage({ params }) {
                 body: JSON.stringify({ newTitle, newImg, newContent })
             })
 
+
+
             if (!res.ok) {
                 throw new Error("Failed to update post");
             }

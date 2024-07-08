@@ -37,7 +37,7 @@
 
             try {
 
-                const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/userExists`, {
+                const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}api/userExists`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -52,7 +52,7 @@
                     return;
                 }
 
-                const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/register`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_URL}api/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -61,6 +61,8 @@
                         name, email, password
                     })
                 })
+
+      
 
                 if (res.ok) {
                     const form = e.target;
