@@ -37,7 +37,7 @@
 
             try {
 
-                const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}api/userExists`, {
+                const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/userExists`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -52,7 +52,7 @@
                     return;
                 }
 
-                const res = await fetch(`${process.env.NEXT_PUBLIC_URL}api/register`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -86,7 +86,7 @@
                         <div className="w-[400px] shadow-xl p-10 rounded-xl">
                             <h3 className="text-3xl">Register</h3>
                             <hr className='my-2' />
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} method='POST'>
 
                                 {error && (
                                     <div className='bg-red-500 w-fit text-sm text-white py-1 px-3 rounded-md mt-2'>{error}</div>
