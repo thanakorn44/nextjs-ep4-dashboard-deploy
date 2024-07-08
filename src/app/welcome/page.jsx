@@ -28,7 +28,7 @@ function WelcomePage() {
     const getPosts = async () => {
         try {
 
-            const res = await fetch(process.env.NEXT_PUBLIC_URL +`/api/posts?email=${userEmail}` , {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts?email=${userEmail}`, {
                 cache: "no-store"
             })
 
