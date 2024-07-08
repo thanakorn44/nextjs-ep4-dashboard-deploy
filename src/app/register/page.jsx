@@ -37,7 +37,7 @@ function RegisterPage() {
 
         try {
 
-            const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/userExists`, {
+            const resUserExists = await fetch(process.env.NEXT_PUBLIC_URL +`/api/userExists`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
