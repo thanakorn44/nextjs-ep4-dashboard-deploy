@@ -62,7 +62,8 @@
                     })
                 })
 
-      
+                console.log(process.env.NEXT_PUBLIC_URL);
+
 
                 if (res.ok) {
                     const form = e.target;
