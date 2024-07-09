@@ -35,10 +35,13 @@ function AdminEditPostPage({ params }) {
     const [newContent, setNewContent] = useState("");
 
 
+    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+
+
     const getPostById = async (id) => {
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/totalPosts/${id}`, {
+            const res = await fetch(`${baseUrl}/api/totalPosts/${id}`, {
                 method: "GET",
                 cache: "no-store"
             })
@@ -58,14 +61,14 @@ function AdminEditPostPage({ params }) {
 
     useEffect(() => {
         getPostById(id)
-    }, [id]);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/totalPosts/${id}`, {
+            const res = await fetch(`${baseUrl}/api/totalPosts/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

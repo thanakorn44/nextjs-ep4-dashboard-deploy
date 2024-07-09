@@ -24,11 +24,13 @@ function EditPage({ params }) {
     const [newImg, setNewImg] = useState("");
     const [newContent, setNewContent] = useState("");
 
+    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+
     const router = useRouter();
 
     const getPostById = async (id) => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${id}`, {
+            const res = await fetch(`${baseUrl}/api/posts/${id}`, {
                 method: "GET",
                 cache: "no-store"
             })
@@ -53,7 +55,7 @@ function EditPage({ params }) {
         e.preventDefault();
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${id}`, {
+            const res = await fetch(`${baseUrl}/api/posts/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json"

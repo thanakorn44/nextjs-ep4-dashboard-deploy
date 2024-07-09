@@ -22,6 +22,8 @@
         if (session) redirect('/welcome')
         console.log(session)
 
+        const baseUrl = process.env.NEXT_PUBLIC_NAME;
+
         const handleSubmit = async (e) => {
             e.preventDefault();
 
@@ -37,7 +39,7 @@
 
             try {
 
-                const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/userExists`, {
+                const resUserExists = await fetch(`${baseUrl}/api/userExists`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -52,7 +54,7 @@
                     return;
                 }
 
-                const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/register`, {
+                const res = await fetch(`${baseUrl}/api/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -62,7 +64,7 @@
                     })
                 })
 
-                console.log(process.env.NEXT_PUBLIC_URL);
+                console.log("process.env.NEXT_PUBLIC_URL: ", process.env.NEXT_PUBLIC_URL);
 
 
                 if (res.ok) {

@@ -23,11 +23,13 @@ function AdminUserManagePage() {
 
     const [allPostsData, setAllPostsData] = useState([]);
 
+    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+
     console.log("allPostsData:", allPostsData)
 
     const getAllPostsData = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/totalPosts`, {
+            const res = await fetch(`${baseUrl}/api/totalPosts`, {
                 cache: "no-store"
             })
 
