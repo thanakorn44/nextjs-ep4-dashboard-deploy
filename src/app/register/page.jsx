@@ -20,7 +20,7 @@ function RegisterPage() {
 
     const { data: session } = useSession();
     if (session) redirect('/welcome')
-    console.log(session)
+    
 
    
 
@@ -64,7 +64,7 @@ function RegisterPage() {
                 })
             })
 
-            console.log("process.env.NEXT_PUBLIC_URL: ", process.env.NEXT_PUBLIC_URL);
+            console.log("process.env.NEXT_PUBLIC_URL: ", process.env.NEXT_PUBLIC_API_URL);
 
 
             if (res.ok) {
