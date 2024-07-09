@@ -25,7 +25,7 @@ function AdminEditUserPage({ params }) {
     const [newEmail, setNewEmail] = useState("");
     const [newPassword, setNewPassword] = useState("");
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
 
     const getUserById = async (id) => {

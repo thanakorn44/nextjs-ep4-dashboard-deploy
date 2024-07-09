@@ -20,7 +20,7 @@ function CreatePage() {
     const [img, setImg] = useState("");
     const [content, setContent] = useState("");
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     const router = useRouter();
 

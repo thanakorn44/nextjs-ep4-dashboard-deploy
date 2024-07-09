@@ -22,7 +22,7 @@
         if (session) redirect('/welcome')
         console.log(session)
 
-        const baseUrl = process.env.NEXT_PUBLIC_NAME;
+        const baseUrl = process.env.NEXTPUBLIC_URL;
 
         const handleSubmit = async (e) => {
             e.preventDefault();

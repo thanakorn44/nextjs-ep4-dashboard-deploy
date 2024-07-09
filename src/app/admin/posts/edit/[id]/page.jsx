@@ -35,8 +35,7 @@ function AdminEditPostPage({ params }) {
     const [newContent, setNewContent] = useState("");
 
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
-
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     const getPostById = async (id) => {
         try {

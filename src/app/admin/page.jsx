@@ -23,7 +23,7 @@ function AdminPage() {
     // console.log(totalPostData)
     // console.log(totalUserData)
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     const getTotalUser = async () => {
         try {

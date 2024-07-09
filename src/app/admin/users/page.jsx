@@ -21,7 +21,7 @@ function AdminUserManagePage() {
 
     console.log("allUserData: ", allUserData)
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     const getAlldata = async () => {
         try {

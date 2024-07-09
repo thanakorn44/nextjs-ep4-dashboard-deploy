@@ -24,7 +24,7 @@ function EditPage({ params }) {
     const [newImg, setNewImg] = useState("");
     const [newContent, setNewContent] = useState("");
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     const router = useRouter();
 

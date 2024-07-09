@@ -21,7 +21,7 @@ function WelcomePage() {
 
     const [postData, setPostData] = useState([]);
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     const userEmail = session?.user?.email;
 

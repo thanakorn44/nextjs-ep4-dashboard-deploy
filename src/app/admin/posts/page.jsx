@@ -23,7 +23,7 @@ function AdminUserManagePage() {
 
     const [allPostsData, setAllPostsData] = useState([]);
 
-    const baseUrl = process.env.NEXT_PUBLIC_NAME;
+    const baseUrl = process.env.NEXTPUBLIC_URL;
 
     console.log("allPostsData:", allPostsData)
 
