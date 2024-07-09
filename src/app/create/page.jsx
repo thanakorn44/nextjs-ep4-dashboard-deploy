@@ -20,7 +20,7 @@ function CreatePage() {
     const [img, setImg] = useState("");
     const [content, setContent] = useState("");
 
-    const baseUrl = process.env.NEXTPUBLIC_URL;
+
 
     const router = useRouter();
 
@@ -36,7 +36,7 @@ function CreatePage() {
 
         try {
 
-            const res = await fetch(`${baseUrl}/api/posts`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

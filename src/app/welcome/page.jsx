@@ -21,14 +21,14 @@ function WelcomePage() {
 
     const [postData, setPostData] = useState([]);
 
-    const baseUrl = process.env.NEXTPUBLIC_URL;
+
 
     const userEmail = session?.user?.email;
 
     const getPosts = async () => {
         try {
 
-            const res = await fetch(`${baseUrl}/api/posts?email=${userEmail}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?email=${userEmail}`, {
                 cache: "no-store"
             })
 

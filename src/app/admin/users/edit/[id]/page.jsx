@@ -25,12 +25,12 @@ function AdminEditUserPage({ params }) {
     const [newEmail, setNewEmail] = useState("");
     const [newPassword, setNewPassword] = useState("");
 
-    const baseUrl = process.env.NEXTPUBLIC_URL;
+  
 
 
     const getUserById = async (id) => {
         try {
-            const res = await fetch(`${baseUrl}/api/totalUsers/${id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers/${id}`, {
                 method: "GET",
                 cache: "no-store"
             })

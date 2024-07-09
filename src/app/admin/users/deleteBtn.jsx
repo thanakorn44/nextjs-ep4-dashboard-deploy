@@ -4,7 +4,7 @@ import React from 'react'
 
 function DeleteBtn({ id }) {
 
-    const baseUrl = process.env.NEXTPUBLIC_URL;
+
 
     const handlerDelete = async () => {
         const confirmed = confirm("Are you sure?")
@@ -12,7 +12,7 @@ function DeleteBtn({ id }) {
         
 
         if (confirmed) {
-            const res = await fetch(`${baseUrl}/api/totalUsers?id=${id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers?id=${id}`, {
                 method: "DELETE"
             })
 

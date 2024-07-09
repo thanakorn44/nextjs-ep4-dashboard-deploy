@@ -23,12 +23,12 @@ function AdminPage() {
     // console.log(totalPostData)
     // console.log(totalUserData)
 
-    const baseUrl = process.env.NEXTPUBLIC_URL;
+  
 
     const getTotalUser = async () => {
         try {
 
-            const res = await fetch(`${baseUrl}/api/totalUsers`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers`, {
                 cache: "no-store"
             })
 
@@ -47,7 +47,7 @@ function AdminPage() {
     const getTotalPost = async () => {
         try {
 
-            const res = await fetch(`${baseUrl}/api/totalPosts`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalPosts`, {
                 cache: "no-store"
             })
 

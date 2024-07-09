@@ -21,12 +21,12 @@ function AdminUserManagePage() {
 
     console.log("allUserData: ", allUserData)
 
-    const baseUrl = process.env.NEXTPUBLIC_URL;
+   
 
     const getAlldata = async () => {
         try {
 
-            const res = await fetch(`${baseUrl}/api/totalUsers`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers`, {
                 cache: "no-store"
             })
 
