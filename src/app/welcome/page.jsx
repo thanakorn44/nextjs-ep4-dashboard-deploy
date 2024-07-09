@@ -36,6 +36,8 @@ function WelcomePage() {
                 throw new Error("Failed to fetch posts.")
             }
 
+            console.log(process.env.NEXT_PUBLIC_API_URL)
+
             const data = await res.json();
             console.log(data)
             setPostData(data.posts);
