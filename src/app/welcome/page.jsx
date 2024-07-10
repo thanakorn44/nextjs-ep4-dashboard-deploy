@@ -10,14 +10,15 @@ import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import DeleteBtn from './DeleteBtn'
+import { BASE_API_URL } from '../utils/constants'
 
 function WelcomePage() {
 
     const { data: session } = useSession();
     if (!session) redirect('/login')
 
-    if(session?.user?.role === "admin") redirect("/admin") 
-   
+    if (session?.user?.role === "admin") redirect("/admin")
+
 
     const [postData, setPostData] = useState([]);
 
@@ -28,7 +29,7 @@ function WelcomePage() {
     const getPosts = async () => {
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?email=${userEmail}`, {
+            const res = await fetch(`${BASE_API_URL}/api/posts?email=${userEmail}`, {
                 cache: "no-store"
             })
 
@@ -36,7 +37,7 @@ function WelcomePage() {
                 throw new Error("Failed to fetch posts.")
             }
 
-            console.log(process.env.NEXT_PUBLIC_API_URL)
+            console.log("API_URL: ", BASE_API_URL)
 
             const data = await res.json();
             console.log(data)
@@ -82,7 +83,7 @@ function WelcomePage() {
                                     <p>{val.content}</p>
                                     <div className="mt-5">
                                         <Link className='bg-gray-500 text-white text-center border py-2 px-3 rounded-md text-lg my-2' href={`/edit/${val._id}`}>Edit</Link>
-                                        <DeleteBtn id={val._id}/>
+                                        <DeleteBtn id={val._id} />
                                     </div>
                                 </div>
                             ))

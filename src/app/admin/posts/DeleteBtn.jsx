@@ -1,5 +1,6 @@
 "use client"
 
+import { BASE_API_URL } from '@/app/utils/constants'
 import React from 'react'
 
 function DeleteBtn({ id }) {
@@ -11,7 +12,7 @@ function DeleteBtn({ id }) {
         
 
         if (confirmed) {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalPosts?id=${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalPosts?id=${id}`, {
                 method: "DELETE"
             })
 

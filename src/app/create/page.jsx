@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import { BASE_API_URL } from '../utils/constants'
 
 function CreatePage() {
 
@@ -36,7 +37,7 @@ function CreatePage() {
 
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, {
+            const res = await fetch(`${BASE_API_URL}/api/posts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

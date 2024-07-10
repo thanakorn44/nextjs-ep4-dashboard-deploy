@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import DeleteBtn from './deleteBtn'
+import { BASE_API_URL } from '@/app/utils/constants'
 
 function AdminUserManagePage() {
 
@@ -26,7 +27,7 @@ function AdminUserManagePage() {
     const getAlldata = async () => {
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalUsers`, {
                 cache: "no-store"
             })
 

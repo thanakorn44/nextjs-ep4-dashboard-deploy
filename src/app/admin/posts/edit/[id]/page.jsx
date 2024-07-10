@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import { BASE_API_URL } from '@/app/utils/constants'
 
 
 
@@ -40,7 +41,7 @@ function AdminEditPostPage({ params }) {
     const getPostById = async (id) => {
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalPosts/${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalPosts/${id}`, {
                 method: "GET",
                 cache: "no-store"
             })
@@ -67,7 +68,7 @@ function AdminEditPostPage({ params }) {
 
         try {
 
-            const res = await fetch(`${baseUrl}/api/totalPosts/${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalPosts/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

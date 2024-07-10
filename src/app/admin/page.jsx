@@ -9,6 +9,7 @@ import Content from './components/Content'
 
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
+import { BASE_API_URL } from '../utils/constants'
 
 
 function AdminPage() {
@@ -28,7 +29,7 @@ function AdminPage() {
     const getTotalUser = async () => {
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalUsers`, {
                 cache: "no-store"
             })
 
@@ -47,7 +48,7 @@ function AdminPage() {
     const getTotalPost = async () => {
         try {
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalPosts`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalPosts`, {
                 cache: "no-store"
             })
 

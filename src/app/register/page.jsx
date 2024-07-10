@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Footer from '../components/Footer'
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import { BASE_API_URL } from '../utils/constants'
 
 
 function RegisterPage() {
@@ -39,13 +40,17 @@ function RegisterPage() {
 
         try {
 
-            const resUserExists = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/userExists`, {
+            const resUserExists = await fetch(`${BASE_API_URL}/api/userExists`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ email })
             })
+
+            console.log("API : ", BASE_API_URL)
+
+           
 
             const { user } = await resUserExists.json();
 
@@ -54,7 +59,7 @@ function RegisterPage() {
                 return;
             }
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/register`, {
+            const res = await fetch(`${BASE_API_URL}/api/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -64,7 +69,7 @@ function RegisterPage() {
                 })
             })
 
-            console.log("process.env.NEXT_PUBLIC_URL: ", process.env.NEXT_PUBLIC_API_URL);
+            console.log("API : ", BASE_API_URL)
 
 
             if (res.ok) {

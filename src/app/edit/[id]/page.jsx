@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import { BASE_API_URL } from '@/app/utils/constants'
 
 function EditPage({ params }) {
 
@@ -30,7 +31,7 @@ function EditPage({ params }) {
 
     const getPostById = async (id) => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/posts/${id}`, {
                 method: "GET",
                 cache: "no-store"
             })
@@ -55,7 +56,7 @@ function EditPage({ params }) {
         e.preventDefault();
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/posts/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json"

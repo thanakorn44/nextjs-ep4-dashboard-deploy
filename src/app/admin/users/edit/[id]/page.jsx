@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import { BASE_API_URL } from '@/app/utils/constants'
 
 function AdminEditUserPage({ params }) {
 
@@ -25,12 +26,9 @@ function AdminEditUserPage({ params }) {
     const [newEmail, setNewEmail] = useState("");
     const [newPassword, setNewPassword] = useState("");
 
-  
-
-
     const getUserById = async (id) => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/totalUsers/${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalUsers/${id}`, {
                 method: "GET",
                 cache: "no-store"
             })
@@ -56,7 +54,7 @@ function AdminEditUserPage({ params }) {
 
         try {
 
-            const res = await fetch(`${baseUrl}/api/totalUsers/${id}`, {
+            const res = await fetch(`${BASE_API_URL}/api/totalUsers/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
